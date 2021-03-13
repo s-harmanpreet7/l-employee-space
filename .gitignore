@@ -1,0 +1,18 @@
+@@ -0,0 +1,33 @@
+employee-space-service/HELP.md
+employee-space-service/target/
+!employee-space-service/.mvn/wrapper/maven-wrapper.jar
+!**/employee-space-service/src/main/**/target/
+!**/employee-space-service/src/test/**/target/
+
+### STS ###
+employee-space-service/.apt_generated
+employee-space-service/.classpath
+employee-space-service/.factorypath
+employee-space-service/.project
+employee-space-service/.settings
+employee-space-service/.springBeans
+employee-space-service/.sts4-cache
+
+### VS Code ###
+.vscode/
