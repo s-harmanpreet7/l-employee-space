@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import in.harmanpreetsingh.employeespace.exception.InvalidDataException;
 import in.harmanpreetsingh.employeespace.model.Employee;
 import in.harmanpreetsingh.employeespace.service.EmployeeService;
 
@@ -21,6 +22,12 @@ public class EmployeeResource {
 	
 	@PostMapping("/add")
 	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
-		return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
+		
+		try {
+			return new ResponseEntity<>(employeeService.addEmployee(employee), HttpStatus.CREATED);
+		} catch (InvalidDataException ex) {
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
 	}
 }
